@@ -13,6 +13,8 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['mazzeogeorge@gmail.com']
+
+    POSTS_PER_PAGE = 3
 '''
 export MAIL_SERVER=smtp.googlemail.com
 export MAIL_PORT=587
