@@ -1,14 +1,4 @@
-2020-12-29 19:18:19,022 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
-2020-12-29 19:18:29,054 ERROR: Exception on /edit_profile [POST] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
-    cursor, statement, parameters, context
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 609, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
+2020-12-30 11:01:42,281 ERROR: Exception on /user/jack [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -24,52 +14,23 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 98, in edit_profile
-    db.session.commit()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1046, in commit
-    self.transaction.commit()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 504, in commit
-    self._prepare_impl()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
-    self.session.flush()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2540, in flush
-    self._flush(objects)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2682, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
-    with_traceback=exc_tb,
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
-    raise exception
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2642, in _flush
-    flush_context.execute()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
-    uow,
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
-    update,
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 995, in _emit_update_statements
-    statement, multiparams
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
-    return meth(self, multiparams, params)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1130, in _execute_clauseelement
-    distilled_params,
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1317, in _execute_context
-    e, statement, parameters, cursor, context
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1511, in _handle_dbapi_exception
-    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
-    raise exception
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
-    cursor, statement, parameters, context
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 609, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
-[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
-[parameters: ('jack', '', 6)]
-(Background on this error at: http://sqlalche.me/e/13/gkpj)
-2020-12-29 19:24:29,331 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 91, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/user.html", line 20, in block "content"
+    {{ form.submit(value='Follow') }}
+jinja2.exceptions.UndefinedError: 'app.forms.EmptyForm object' has no attribute 'submit'
+2020-12-30 11:02:31,918 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
