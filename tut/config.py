@@ -14,7 +14,7 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['mazzeogeorge@gmail.com']
 
-    POSTS_PER_PAGE = 3
+    POSTS_PER_PAGE = 20
 '''
 export MAIL_SERVER=smtp.googlemail.com
 export MAIL_PORT=587
