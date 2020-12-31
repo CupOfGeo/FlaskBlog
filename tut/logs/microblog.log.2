@@ -1,4 +1,4 @@
-2020-12-30 10:55:24,213 ERROR: Exception on /user/Bob [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2020-12-30 11:01:42,281 ERROR: Exception on /user/jack [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -16,27 +16,26 @@ Traceback (most recent call last):
     return func(*args, **kwargs)
   File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 91, in user
     return render_template('user.html', user=user, posts=posts, form=form)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
-    code = environment.compile(source, name, filename)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
-    self.handle_exception(source=source_hint)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/user.html", line 18, in template
-    <form action="{{ url_for('follow'), username=user.username) }}" method="post">
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
-2020-12-30 10:55:48,962 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
-2020-12-30 10:55:51,680 ERROR: Exception on /user/Bob [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 30, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/user.html", line 20, in block "content"
+    {{ form.submit(value='Follow') }}
+jinja2.exceptions.UndefinedError: 'app.forms.EmptyForm object' has no attribute 'submit'
+2020-12-30 11:02:31,918 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 12:36:58,765 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 12:37:14,671 ERROR: Exception on /index [POST] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -52,29 +51,14 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 91, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
-    code = environment.compile(source, name, filename)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
-    self.handle_exception(source=source_hint)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/user.html", line 18, in template
-    <form action="{{ url_for('follow'), username=user.username) }}", method="post">
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
-2020-12-30 10:57:52,704 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
-2020-12-30 10:57:57,018 ERROR: Exception on /user/Bob [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 20, in index
+    flask('Your post is now live')
+NameError: name 'flask' is not defined
+2020-12-30 12:37:37,850 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 12:40:56,948 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 12:53:10,682 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:01:57,915 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:02:01,582 ERROR: Exception on /explore [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -90,25 +74,37 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 91, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
-    code = environment.compile(source, name, filename)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
-    self.handle_exception(source=source_hint)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/user.html", line 18, in template
-    <form action="{{ url_for('follow'), username=user.username) }}", method="post">
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
-2020-12-30 11:01:24,592 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 159, in explore
+    next_url = url_for('index',page=post.next_num) if post.has_next else None
+NameError: name 'post' is not defined
+2020-12-30 13:02:32,901 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:02:35,105 ERROR: Exception on /explore [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 159, in explore
+    next_url = url_for('index',page=posts.next_num) if post.has_next else None
+NameError: name 'post' is not defined
+2020-12-30 13:03:00,670 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:04:52,249 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:05:23,663 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:13:10,306 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:13:56,664 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:15:01,841 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:17:52,047 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:18:09,563 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:18:41,669 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:19:57,830 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]
+2020-12-30 13:30:16,773 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:46]

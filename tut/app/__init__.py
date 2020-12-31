@@ -7,6 +7,7 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+from flask_mail import Mail
 
 
 app = Flask(__name__)
@@ -17,6 +18,7 @@ migrate = Migrate(app, db) #migrate engine (?)
 login = LoginManager(app) #login Chapter 5
 login.login_view = 'login' #endpointthe name used in url_for'login'
 
+mail = Mail(app) #chapter 10
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
