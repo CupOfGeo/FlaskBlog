@@ -1,115 +1,74 @@
-2021-01-01 10:43:28,375 ERROR: Exception on /login [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 66, in login
-    return render_template('login.html', title="Sign In", form=form)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 1, in template
-    {% enxtends 'bootstrap/base.html' %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'enxtends'.
-2021-01-01 10:43:28,605 ERROR: Exception on /favicon.ico [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1926, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1908, in raise_routing_exception
-    raise request.routing_exception
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/ctx.py", line 350, in match_request
-    result = self.url_adapter.match(return_rule=True)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1945, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1816, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1744, in handle_http_exception
-    return handler(e)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/errors.py", line 6, in not_found_error
-    return render_template('404.html'), 404
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/404.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 1, in template
-    {% enxtends 'bootstrap/base.html' %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'enxtends'.
-2021-01-01 10:56:09,833 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:51]
-2021-01-01 10:56:14,579 ERROR: Exception on /login [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 66, in login
-    return render_template('login.html', title="Sign In", form=form)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/login.html", line 1, in top-level template code
-    {% extends "app_content.html" %}
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: app_content.html
+2021-01-01 13:28:34,577 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 13:29:15,779 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 13:32:22,454 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 13:36:08,064 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 13:40:22,468 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 13:41:51,445 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:02:40,757 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:06:37,991 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:07:09,662 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:10:26,765 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:11:14,284 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:11:34,635 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:13:31,993 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:13:38,205 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:14:09,274 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:15:24,173 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:15:28,587 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:18:52,128 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:19:01,049 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:19:06,853 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:20:17,843 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:20:44,496 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:20:53,817 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:22:42,109 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:23:52,667 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:25:40,964 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:28:02,698 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:28:44,185 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:39:31,136 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:40:13,943 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:44:03,355 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:45:22,450 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:45:56,845 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:46:57,227 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:47:24,719 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:48:13,738 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 14:48:30,877 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:00:25,575 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:03:49,005 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:05:45,884 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:06:06,561 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:06:15,511 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:09:19,770 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:10:59,149 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:11:41,474 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:12:03,052 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:12:32,256 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:14:15,843 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:14:43,195 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:15:17,901 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:16:07,143 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:22:40,810 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:23:24,873 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:24:29,985 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:25:56,414 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:27:32,169 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 15:28:35,771 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:25:18,074 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:25:42,214 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:26:02,051 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:28:32,878 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:32:26,414 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:33:15,801 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:33:26,921 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:33:54,541 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:34:43,858 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:36:35,150 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:37:08,755 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:37:20,548 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:38:34,649 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:39:32,538 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 16:43:06,508 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:54]
+2021-01-01 18:01:50,475 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:78]
+2021-01-01 18:02:18,094 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:78]
