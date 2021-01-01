@@ -8,6 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
+from flask_bootstrap import Bootstrap
 
 
 app = Flask(__name__)
@@ -19,6 +20,8 @@ login = LoginManager(app) #login Chapter 5
 login.login_view = 'login' #endpointthe name used in url_for'login'
 
 mail = Mail(app) #chapter 10
+
+bootstrap = Bootstrap(app) #chapter 11
 
 if not app.debug:
     if app.config['MAIL_SERVER']:

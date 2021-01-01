@@ -3,6 +3,8 @@ from flask import render_template
 from app import mail, app
 from threading import Thread #END of chapter
 
+
+#python -m smtpd -n -c DebuggingServer localhost:8026
 def send_email(suject, sender, recipient, text_body, html_body):
     msg = Message(subject, sender=sender, recipients=recipient)
     msg.body = text_body
