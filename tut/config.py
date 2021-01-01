@@ -15,10 +15,16 @@ class Config(object):
     ADMINS = ['mazzeogeorge@gmail.com']
 
     POSTS_PER_PAGE = 20
+
+    LANGUAGES = ['en','es']
+
+
+
+
 '''
 export MAIL_SERVER=smtp.googlemail.com
 export MAIL_PORT=587
 export MAIL_USE_TLS=1
 export MAIL_USERNAME=mazzeogeorge@gmail.com
-export MAIL_PASSWORD=...
+export MAIL_PASSWORD=
 '''

@@ -10,6 +10,7 @@ from flask_login import LoginManager
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
+from flask_bable import Bable
 
 
 app = Flask(__name__)
@@ -20,11 +21,10 @@ migrate = Migrate(app, db) #migrate engine (?)
 login = LoginManager(app) #login Chapter 5
 login.login_view = 'login' #endpointthe name used in url_for'login'
 
-mail = Mail(app) #chapter 10
-
-bootstrap = Bootstrap(app) #chapter 11
-
-moment = Moment(app) #chapter 12
+mail = Mail(app) #chapter 10 mail
+bootstrap = Bootstrap(app) #chapter 11 front end
+moment = Moment(app) #chapter 12 timezones
+bable = bable(app) #chapter 13
 
 if not app.debug:
     if app.config['MAIL_SERVER']:
