@@ -6,6 +6,7 @@ from flask_login import UserMixin
 from hashlib import md5
 from time import time
 import jwt
+from app.search import *
 
 #DATABASE STUFF
 
@@ -82,13 +83,72 @@ class User(UserMixin, db.Model):
             return
         return User.query.get(id)
 
-class Post(db.Model):
+
+# a class method is a special method tht is associated with the class
+# and not a particular instance. Post.search or User.before_commit
+#Its not an instance of a class but recives a class to operate on (cls not self)
+class SearchableMixin(object):
+    #to replace the list of object IDs with actual objects
+    @classmethod
+    def search(cls, expression, page, per_page):
+        ids, total = query_index(cls.__tablename__, expression, page, per_page)
+        if total == 0:
+            return cls.query.filter_by(id=0), 0
+        when = []
+        for i in range(len(ids)):
+            when.append((ids[i], i))
+
+        #returns the the elasticsearch query results
+        #and the total number search results
+        return cls.query.filter(
+        cls.id.in_(ids)).order_by(db.case(when, value=cls.id)), total
+
+
+    @classmethod
+    def before_commit(cls, session):
+        #using the sessions object's _changes variable
+        session._changes = {
+        'add': list(session.new),
+        'update': list(session.dirty),
+        'delete': list(session.deleted)
+        }
+
+    #after the commit has happend go through the adds updates and deletes on the
+    #elasticsearch side
+    @classmethod
+    def after_commit(cls, session):
+        for obj in session._changes['add']:
+            if isinstance(obj, SearchableMixin):
+                add_to_index(obj.__tablename__, obj)
+
+        for obj in session._changes['update']:
+            if isinstance(obj, SearchableMixin):
+                add_to_index(obj.__tablename__, obj)
+
+        for obj in session._changes['delete']:
+            if isinstance(obj, SearchableMixin):
+                remove_from_index(obj.__tablename__, obj)
+        session._changes = None
+
+    #helper to add all the posts
+    #initalized the index from all the posts in the db
+    @classmethod
+    def reindex(cls):
+        for obj in cls.query:
+            add_to_index(cls.__tablename__, obj)
+
+#setting up db even listeners to get before and after commit events
+db.event.listen(db.session, 'before_commit', SearchableMixin.before_commit)
+db.event.listen(db.session, 'after_commit', SearchableMixin.after_commit)
+
+class Post(SearchableMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow())
     #one to many connection
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) #they are connected by this
     language = db.Column(db.String(5))
+    __searchable__ = ['body']
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)

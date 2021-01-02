@@ -1,4 +1,4 @@
-2021-01-01 18:07:18,520 ERROR: Exception on /index [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-01 18:11:19,526 ERROR: Exception on /index [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -36,10 +36,14 @@ Traceback (most recent call last):
     {%- block html %}
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
     {% block body -%}
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
-    {% block navbar %}
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 17, in block "navbar"
-    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{%endblock%}
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/index.html", line 11, in block "app_content"
+    {% include '_post.html' %}
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/_post.html", line 4, in top-level template code
+    <a href="{{ url_for('user', username=post.author.username) }}">
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
@@ -50,9 +54,9 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
-2021-01-01 18:09:23,643 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:78]
-2021-01-01 18:09:28,092 ERROR: Exception on /index [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you mean 'main.user' instead?
+2021-01-01 18:13:32,886 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:78]
+2021-01-01 18:13:36,787 ERROR: Exception on /index [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -90,10 +94,14 @@ Traceback (most recent call last):
     {%- block html %}
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
     {% block body -%}
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
-    {% block navbar %}
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 17, in block "navbar"
-    <a class="navbar-brand" href="{{ url_for('index') }}">Microblog</a>
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 48, in block "content"
+    {% block app_content %}{%endblock%}
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/index.html", line 11, in block "app_content"
+    {% include '_post.html' %}
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/_post.html", line 4, in top-level template code
+    <a href="{{ url_for('user', username=post.author.username) }}">
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
@@ -104,5 +112,12 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
-2021-01-01 18:11:15,485 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:78]
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you mean 'main.user' instead?
+2021-01-01 18:15:57,059 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:78]
+2021-01-01 18:46:33,939 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:78]
+2021-01-02 01:41:22,339 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:78]
+2021-01-02 14:05:57,113 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:82]
+2021-01-02 14:08:02,127 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:82]
+2021-01-02 14:09:32,563 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:82]
+2021-01-02 14:10:28,193 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:82]
+2021-01-02 14:13:17,071 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:82]

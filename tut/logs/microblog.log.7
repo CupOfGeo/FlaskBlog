@@ -1,39 +1,4 @@
-2021-01-01 10:43:28,375 ERROR: Exception on /login [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/routes.py", line 66, in login
-    return render_template('login.html', title="Sign In", form=form)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 1, in template
-    {% enxtends 'bootstrap/base.html' %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'enxtends'.
-2021-01-01 10:43:28,605 ERROR: Exception on /favicon.ico [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-01 10:56:14,725 ERROR: Exception on /favicon.ico [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
@@ -79,8 +44,8 @@ Traceback (most recent call last):
   File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 1, in template
     {% enxtends 'bootstrap/base.html' %}
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'enxtends'.
-2021-01-01 10:56:09,833 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:51]
-2021-01-01 10:56:14,579 ERROR: Exception on /login [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-01 10:56:37,407 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:51]
+2021-01-01 10:56:40,519 ERROR: Exception on /login [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -113,3 +78,50 @@ Traceback (most recent call last):
   File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 89, in _get_source_fast
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: app_content.html
+2021-01-01 10:56:40,661 ERROR: Exception on /favicon.ico [GET] [in /Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1926, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1908, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1816, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/app.py", line 1744, in handle_http_exception
+    return handler(e)
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/mazzeogeorge/Code/Flask/tut/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/mazzeogeorge/Code/Flask/tut/app/templates/base.html", line 48, in template
+    {%endif%}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endif'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+2021-01-01 10:57:09,983 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:51]
