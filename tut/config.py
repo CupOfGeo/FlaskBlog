@@ -25,6 +25,8 @@ class Config(object):
 
     ELASTICSEARCH_URL='http://localhost:9200'
 
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
+
 
 
 
