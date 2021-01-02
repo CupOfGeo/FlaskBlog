@@ -86,3 +86,6 @@ elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HT
 2021-01-02 16:18:13,919 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:83]
 2021-01-02 16:18:13,936 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:100]
 2021-01-02 16:18:13,936 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:100]
+2021-01-02 17:23:55,805 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:83]
+2021-01-02 17:23:55,805 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:100]
+2021-01-02 17:23:55,805 INFO: Microblog startup [in /Users/mazzeogeorge/Code/Flask/tut/app/__init__.py:100]
